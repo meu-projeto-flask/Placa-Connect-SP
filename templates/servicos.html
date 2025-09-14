@@ -1,30 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-<h2 class="text-center mb-4">Nossos Serviços</h2>
-<div class="row g-4">
-  <div class="col-md-4">
-    <div class="card shadow-sm">
-      <div class="card-body">
-        <h5 class="card-title">1º Emplacamento</h5>
-        <p class="card-text">Cuidamos de todo o processo de emplacamento para veículos novos, sem complicação.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="card shadow-sm">
-      <div class="card-body">
-        <h5 class="card-title">Troca para Placa Mercosul</h5>
-        <p class="card-text">Atualize sua placa antiga para o novo padrão Mercosul com rapidez e segurança.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="card shadow-sm">
-      <div class="card-body">
-        <h5 class="card-title">Transferência de Propriedade</h5>
-        <p class="card-text">Auxiliamos no processo de transferência, garantindo que tudo seja feito corretamente.</p>
-      </div>
-    </div>
-  </div>
-</div>
+<section class="p-8 max-w-4xl mx-auto">
+  <h1 class="text-2xl font-bold mb-6">Nossos Serviços</h1>
+  <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <li class="bg-white p-6 rounded-lg shadow">✔ Emplacamento de veículos novos</li>
+    <li class="bg-white p-6 rounded-lg shadow">✔ Troca de placas danificadas</li>
+    <li class="bg-white p-6 rounded-lg shadow">✔ Transferência de propriedade</li>
+    <li class="bg-white p-6 rounded-lg shadow">✔ Licenciamento anual</li>
+    <li class="bg-white p-6 rounded-lg shadow">✔ Segunda via de documentos</li>
+  </ul>
+</section>
 {% endblock %}

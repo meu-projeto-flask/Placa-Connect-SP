@@ -1,46 +1,38 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }} | Placa Connect</title>
-  <meta name="description" content="Placa Connect - Serviço rápido e confiável de emplacamento de carros e motos. Facilitamos o processo de placas Mercosul e transferências.">
-  <meta name="keywords" content="placa, emplacamento, placa mercosul, carro, moto, transferência, Detran, São Paulo">
-  <meta name="author" content="Placa Connect">
-  <meta property="og:title" content="Placa Connect - Emplacamento sem dor de cabeça">
-  <meta property="og:description" content="Facilitamos o emplacamento do seu carro ou moto em São Paulo. Rápido, seguro e sem burocracia.">
-  <meta property="og:url" content="https://placa-connect-sp.onrender.com">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="{{ url_for('static', filename='img/logo.png') }}">
-  <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Placa Connect SP</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="/">🚗 Placa Connect</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="nav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="/">Início</a></li>
-          <li class="nav-item"><a class="nav-link" href="/servicos">Serviços</a></li>
-          <li class="nav-item"><a class="nav-link" href="/contato">Contato</a></li>
-        </ul>
+<body class="bg-gray-100 text-gray-900">
+  <header class="bg-green-700 text-white p-4 shadow">
+    <nav class="max-w-6xl mx-auto flex justify-between">
+      <a href="/" class="font-bold text-lg">Placa Connect SP</a>
+      <div class="space-x-4">
+        <a href="/regras-emplacamento">Regras</a>
+        <a href="/servicos">Serviços</a>
+        <a href="/sobre">Sobre</a>
+        <a href="/contato">Contato</a>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <main class="container mt-4">
+  <main class="max-w-6xl mx-auto p-4">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+          {{ messages[0] }}
+        </div>
+      {% endif %}
+    {% endwith %}
     {% block content %}{% endblock %}
   </main>
 
-  <footer class="bg-dark text-white text-center py-3 mt-5">
-    © 2025 Placa Connect - Todos os direitos reservados
+  <footer class="bg-green-700 text-white text-center p-4 mt-8">
+    <p>📞 WhatsApp: <a href="https://wa.me/5511941780511" class="font-bold">11 94178-0511</a></p>
+    <p>© 2025 Placa Connect SP - Todos os direitos reservados</p>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
